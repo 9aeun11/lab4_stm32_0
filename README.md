@@ -4,7 +4,7 @@
 
 ## VS Code · MCU
 
-`vscode/ece2_474/ece2_474.code-workspace`를 엽니다. `STM32CubeIDE for Visual Studio Code` 확장을 설치하고 CMake `Configure > Debug`, `Build`를 실행합니다. 현재 `Core/Src/ece2_474_routine.c`는 제공 예제 2(PC13 버튼으로 PA5 토글) 코드입니다. `vscode/ece2_474/evidence/example_1`과 `example_2`에는 각각 교안 예제를 교체한 전체 파일이 있습니다. `vscode/variants`에는 제공 예제 2개와 과제 1·2의 **전체 파일**이 순서대로 있습니다. 각 단계를 실행할 때 `Core/Src/ece2_474_routine.c`를 해당 파일 내용으로 교체하고 다시 빌드합니다. 같은 이름의 함수를 중복 추가하지 않습니다.
+`vscode/ece2_474/ece2_474.code-workspace`를 엽니다. `STM32CubeIDE for Visual Studio Code` 확장을 설치하고 CMake `Configure > Debug`, `Build`를 실행합니다. 현재 `Core/Src/ece2_474_routine.c`는 제공 예제 2(PC13 버튼으로 PA5 토글) 코드입니다. `vscode/ece2_474/evidence/example_1`과 `example_2`에는 각각 교안 예제를 교체한 전체 파일이 있습니다. `vscode/variants`에는 과제 1·2의 **전체 파일**만 있습니다. 제공 예제 1·2는 위 `evidence` 폴더에서 확인합니다. 각 단계를 실행할 때 `Core/Src/ece2_474_routine.c`를 해당 파일 내용으로 교체하고 다시 빌드합니다. 같은 이름의 함수를 중복 추가하지 않습니다.
 
 이 컴퓨터의 `.vscode/settings.json`은 설치된 Arm GNU Toolchain 경로를 가리킵니다. 이 설정 파일은 컴퓨터별 경로 때문에 Git에 올리지 않습니다. GitHub에서 다시 받을 때는 VS Code 확장의 도구 번들을 설치하거나 로컬 설정에서 자신의 컴파일러 경로를 지정하면 됩니다. 수업 기본 워크스페이스는 그대로 포함했습니다.
 
