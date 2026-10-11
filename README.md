@@ -17,3 +17,7 @@
 XDC의 기본 핀은 장비 제공 ZIP의 동일 이름 프로젝트에서 추출했습니다. BCD의 `valid` 출력은 수업 추가 자료 기능이므로 원본 XDC에 없으며, 장비 ZIP과 기존 S75 보드 핀맵에서 미사용 LED 핀 `N5`를 확인해 연결했습니다. 실제 장비가 Combo II-DLD S75(`xc7s75fgga484-1`)인지 확인한 뒤 보드에 다운로드합니다. 보드 시연은 아직 완료되지 않았습니다.
 
 두 TB는 Vivado XSim에서 각각 256개 입력 조합 검증을 통과했습니다. `vivado/*/evidence`에 콘솔 기록을 남겼습니다. 두 설계 모두 합성·구현·DRC를 통과했고 같은 폴더에 보드용 `.bit` 파일을 생성했습니다. XDC는 원본 예제처럼 클록 제약이 없는 조합회로 설정이며, 실제 보드 연결·시연은 장비에서 확인해야 합니다.
+
+## VS Code · FPGA 시뮬레이션
+
+`vscode/fpga_stm32_0.code-workspace`를 VS Code에서 엽니다. 메뉴 `Terminal > Run Task`에서 `FPGA 1: mult_4bit simulation`과 `FPGA 2: bcd_conv simulation`을 한 번에 하나씩 실행합니다. 각 작업은 이 컴퓨터에 설치된 Vivado 2026.1의 XSim을 호출하며, 출력 창에서 각각 `PASS multiplier: 256 input pairs`, `PASS BCD: 100 valid and 156 invalid inputs`를 확인합니다. 다른 컴퓨터에서는 워크스페이스의 Vivado 실행 파일 경로를 설치 경로에 맞게 수정해야 합니다. 파형 확인과 FPGA 보드 다운로드는 Vivado 프로젝트에서 진행합니다. STM32 CMake `Build` 버튼은 FPGA 시뮬레이션용이 아닙니다.

@@ -1,0 +1,4 @@
+2026-10-12 VS Code workspace task / Vivado 2026.1 XSim
+FPGA 1: mult_4bit simulation - PASS multiplier: 256 input pairs
+FPGA 2: bcd_conv simulation - PASS BCD: 100 valid and 156 invalid inputs
+Both tasks finished in VS Code integrated terminal. Board demonstration pending.
