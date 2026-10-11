@@ -12,54 +12,18 @@ void ece2_474_init(void)
 
 void polling_routine(void)
 {
-    static GPIO_PinState previous_button = GPIO_PIN_RESET;
-    static GPIO_PinState led_state = GPIO_PIN_RESET;
-    static uint32_t last_press_ms = UINT32_MAX - 199U;
-    static uint32_t last_change_ms = 0U;
-    static uint32_t interval_ms = 1000U;
+    static GPIO_PinState previous = GPIO_PIN_RESET;
+    static uint32_t last_press_ms = 0;
+    GPIO_PinState current = HAL_GPIO_ReadPin(BUTTON_ece2_GPIO_Port, BUTTON_ece2_Pin);
+    uint32_t now_ms = HAL_GetTick();
 
-    const uint32_t now_ms = HAL_GetTick();
-    const GPIO_PinState button = HAL_GPIO_ReadPin(
-        BUTTON_ece2_GPIO_Port, BUTTON_ece2_Pin);
-
-    /* 버튼의 눌림 에지만 한 번 처리하고, 200 ms 디바운스를 적용합니다. */
-    if ((button == GPIO_PIN_SET) && (previous_button == GPIO_PIN_RESET)
-        && ((uint32_t)(now_ms - last_press_ms) >= 200U))
+    if (current == GPIO_PIN_SET && previous == GPIO_PIN_RESET
+        && now_ms - last_press_ms >= 200U)
     {
         last_press_ms = now_ms;
-
-        if (interval_ms == 1000U)
-        {
-            interval_ms = 2000U;
-        }
-        else if (interval_ms == 2000U)
-        {
-            interval_ms = 4000U;
-        }
-        else if (interval_ms == 4000U)
-        {
-            interval_ms = 8000U;
-        }
-        else
-        {
-            interval_ms = 1000U;
-        }
-
-        /* 선택을 바꾼 순간부터 새 간격을 온전히 기다립니다. */
-        last_change_ms = now_ms;
+        HAL_GPIO_TogglePin(LED_ece2_GPIO_Port, LED_ece2_Pin);
     }
-    previous_button = button;
-
-    if ((uint32_t)(now_ms - last_change_ms) >= interval_ms)
-    {
-        last_change_ms = now_ms;
-        led_state = (led_state == GPIO_PIN_RESET)
-            ? GPIO_PIN_SET : GPIO_PIN_RESET;
-
-        HAL_GPIO_WritePin(GPIO_OUT1_ece2_GPIO_Port,
-                          GPIO_OUT1_ece2_Pin,
-                          led_state);
-    }
+    previous = current;
 }
 
 /* STM32_0 실습은 폴링 방식입니다. 자동 생성된 콜백 연결은 유지합니다. */

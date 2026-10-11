@@ -1,7 +1,4 @@
-/*
- * STM32_0 과제 2: PC13 버튼으로 PB0 외부 LED의 점멸 간격을 변경합니다.
- * 과제 1은 아래 LED_ece2_* 심볼을 사용하도록 바꾸고 같은 코드로 확인합니다.
- */
+/* STM32_0 제공 예제 1: PA5 LED를 1초 간격으로 토글합니다. */
 #include "ece2_474.h"
 #include "main.h"
 
@@ -14,12 +11,13 @@ void polling_routine(void)
 {
     static uint32_t last_ms = 0;
     static GPIO_PinState led_state = GPIO_PIN_RESET;
-    const uint32_t now_ms = HAL_GetTick();
+    uint32_t now_ms = HAL_GetTick();
 
-    if ((uint32_t)(now_ms - last_ms) >= 1000U)
+    if (now_ms - last_ms >= 1000U)
     {
         last_ms = now_ms;
-        led_state = (led_state == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+        led_state = (led_state == GPIO_PIN_RESET)
+                    ? GPIO_PIN_SET : GPIO_PIN_RESET;
         HAL_GPIO_WritePin(LED_ece2_GPIO_Port, LED_ece2_Pin, led_state);
     }
 }
