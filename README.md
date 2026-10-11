@@ -1,10 +1,10 @@
 # LAB4 FPGA/MCU · STM32_0 (10/12)
 
-수업 저장소 `Glaysia/ece2_474`의 **v1.1.0**을 기준으로 준비한 실습 파일입니다. STM32_1 이후와 기말 프로젝트는 포함하지 않습니다.
+수업 저장소 `Glaysia/ece2_474`의 **v1.1.0**을 기준으로 준비한 실습 파일입니다. 구현·검증 범위는 STM32_0이며, STM32_1 이후 실습과 기말 프로젝트는 수행하지 않았습니다. VS Code 프로젝트의 원본 참고 문서는 버전 보존을 위해 함께 있습니다.
 
 ## VS Code · MCU
 
-`vscode/ece2_474/ece2_474.code-workspace`를 엽니다. `STM32CubeIDE for Visual Studio Code` 확장을 설치하고 CMake `Configure > Debug`, `Build`를 실행합니다. 현재 `Core/Src/ece2_474_routine.c`는 과제 2(PB0 외부 LED) 코드입니다. `vscode/variants`에는 제공 예제 2개와 과제 1·2 코드가 순서대로 있습니다. 각 단계에서는 **기존** `polling_routine()`을 교체하고 다시 빌드합니다. 같은 이름의 함수를 중복 추가하지 않습니다.
+`vscode/ece2_474/ece2_474.code-workspace`를 엽니다. `STM32CubeIDE for Visual Studio Code` 확장을 설치하고 CMake `Configure > Debug`, `Build`를 실행합니다. 현재 `Core/Src/ece2_474_routine.c`는 과제 2(PB0 외부 LED) 코드입니다. `vscode/variants`에는 제공 예제 2개와 과제 1·2의 **전체 파일**이 순서대로 있습니다. 각 단계를 실행할 때 `Core/Src/ece2_474_routine.c`를 해당 파일 내용으로 교체하고 다시 빌드합니다. 같은 이름의 함수를 중복 추가하지 않습니다.
 
 이 컴퓨터의 `.vscode/settings.json`은 설치된 Arm GNU Toolchain 경로를 가리킵니다. 이 설정 파일은 컴퓨터별 경로 때문에 Git에 올리지 않습니다. GitHub에서 다시 받을 때는 VS Code 확장의 도구 번들을 설치하거나 로컬 설정에서 자신의 컴파일러 경로를 지정하면 됩니다. 수업 기본 워크스페이스는 그대로 포함했습니다.
 
