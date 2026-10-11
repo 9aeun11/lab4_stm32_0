@@ -17,6 +17,6 @@ if {$design_top ne $name || $sim_top ne "tb"} {
     error "Unexpected top module for $name"
 }
 launch_simulation -simset sim_1 -mode behavioral
-run all
+# Project runtime is all, so launch_simulation runs the testbench to completion.
 close_sim
 close_project
