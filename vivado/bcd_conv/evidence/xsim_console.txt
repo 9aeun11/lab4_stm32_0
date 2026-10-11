@@ -1,0 +1,17 @@
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Mon Oct 12 02:52:27 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/bcd_sim/xsim_script.tcl
+# xsim {bcd_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS BCD: 100 valid and 156 invalid inputs
+$finish called at time : 256 ns : File "C:/Users/gaeun/Documents/Codex/2026-10-09/lab/work/vivado_verified_20261012/bcd/tb.v" Line 17
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Oct 12 02:52:29 2026...

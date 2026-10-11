@@ -1,0 +1,6 @@
+#     puts "IMPLEMENTATION_STATUS $name $status"
+#     puts "BITSTREAM_READY $name"
+IMPLEMENTATION_STATUS mult_4bit write_bitstream Complete!
+BITSTREAM_READY mult_4bit
+IMPLEMENTATION_STATUS bcd_conv write_bitstream Complete!
+BITSTREAM_READY bcd_conv

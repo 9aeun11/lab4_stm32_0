@@ -1,0 +1,15 @@
+# Vivado generated files
+**/.Xil/
+**/*.cache/
+**/*.gen/
+**/*.hw/
+**/*.ip_user_files/
+**/*.runs/
+**/*.sim/
+**/*.jou
+**/*.log
+**/*.pb
+**/xsim.dir/
+# MCU local output and machine-specific compiler settings
+vscode/ece2_474/build/
+vscode/ece2_474/.vscode/settings.json
