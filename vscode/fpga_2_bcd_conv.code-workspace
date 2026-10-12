@@ -2,6 +2,9 @@
   "folders": [
     { "name": "bcd_conv", "path": "../vivado/bcd_conv" }
   ],
+  "settings": {
+    "files.associations": { "*.txt": "plaintext", "*.log": "plaintext" }
+  },
   "tasks": {
     "version": "2.0.0",
     "tasks": [

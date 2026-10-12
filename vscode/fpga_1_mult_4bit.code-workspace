@@ -2,6 +2,9 @@
   "folders": [
     { "name": "mult_4bit", "path": "../vivado/mult_4bit" }
   ],
+  "settings": {
+    "files.associations": { "*.txt": "plaintext", "*.log": "plaintext" }
+  },
   "tasks": {
     "version": "2.0.0",
     "tasks": [
