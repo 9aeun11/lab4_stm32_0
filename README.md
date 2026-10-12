@@ -20,4 +20,4 @@ XDC의 기본 핀은 장비 제공 ZIP의 동일 이름 프로젝트에서 추�
 
 ## VS Code · FPGA 시뮬레이션
 
-`vscode/fpga_stm32_0.code-workspace`를 VS Code에서 엽니다. 메뉴 `Terminal > Run Task`에서 `FPGA 1: mult_4bit simulation`과 `FPGA 2: bcd_conv simulation`을 한 번에 하나씩 실행합니다. 각 작업은 이 컴퓨터에 설치된 Vivado 2026.1의 XSim을 호출하며, 출력 창에서 각각 `PASS multiplier: 256 input pairs`, `PASS BCD: 100 valid and 156 invalid inputs`를 확인합니다. 다른 컴퓨터에서는 워크스페이스의 Vivado 실행 파일 경로를 설치 경로에 맞게 수정해야 합니다. 파형 확인과 FPGA 보드 다운로드는 Vivado 프로젝트에서 진행합니다. STM32 CMake `Build` 버튼은 FPGA 시뮬레이션용이 아닙니다.
+실습 1은 `vscode/fpga_1_mult_4bit.code-workspace`, 실습 2는 `vscode/fpga_2_bcd_conv.code-workspace`를 VS Code에서 **각각 따로** 엽니다. 각 작업 공간은 해당 Vivado 프로젝트 하나만 표시합니다. 메뉴 `Terminal > Run Task`에서 해당 실습 작업을 실행하면 이 컴퓨터에 설치된 Vivado 2026.1의 XSim이 실행됩니다. 출력 창에서 실습 1은 `PASS multiplier: 256 input pairs`, 실습 2는 `PASS BCD: 100 valid and 156 invalid inputs`를 확인합니다. 다른 컴퓨터에서는 작업 공간의 Vivado 실행 파일 경로를 설치 경로에 맞게 수정해야 합니다. 파형 확인과 FPGA 보드 다운로드는 각 Vivado 프로젝트에서 진행합니다. STM32 CMake `Build` 버튼은 FPGA 시뮬레이션용이 아닙니다.
